@@ -28,6 +28,7 @@ class AboutAttributeAccess(Koan):
         try:
             typical.__getattribute__('foobar')
         except AttributeError as exception:
+            self.assertMatch(__, exception.__TypicalObject__.__getattribute__)
             self.assertMatch(__, exception[0])
 
         # THINK ABOUT IT:
